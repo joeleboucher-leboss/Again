@@ -10,7 +10,7 @@ $ pip install virtualenv
 CHAQUE FOIS QUE L'ON ROUVRE LE serveur
 _______________________________________
 
-• Lancer le terminal (cmd) et naviguer jusque dans le répertoire où se situe la copie local du GIT (pour ma part dans C:\Utilisateurs\Thomas\Documents\Github\Again)
+• Lancer le terminal (cmd) et naviguer jusque dans le répertoire où se situe la copie locale du GIT (pour ma part dans C:\Utilisateurs\Thomas\Documents\Github\Again)
 
 • Lancer la commande:
 $ Site\Scripts\activate
