@@ -21,7 +21,20 @@
 - section *contenu*
 - section *pied de page*
 
+### Pages principales
+- **connexionChoice.htm *(Menu principal inscription/connexion)***  
+  arguments: --  
+  utilise: navBarStatic.htm, footer.htm
+- **PrizeList.htm *(Liste des lots, page d'accueil)***  
+  arguments:  navBar.htm, footer.htm
+  utilise:  
+- **searchPrizes.htm *(résultats de recherche de lots)***  
+  arguments:  navBar.htm, footer.htm
+  utilise:  
+
 ### Templates réutilisables
+- **navBarStatic.htm *(barre de navigation sans fonctionnalités)***  
+  arguments: --
 - **navBar.htm *(barre de navigation)***   
   arguments: --
 - **footer.htm *(pied de page)***  
