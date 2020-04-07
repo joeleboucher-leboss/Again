@@ -28,22 +28,20 @@
   arguments: --
 
 ## Nomenclature CSS
-
 ### Elements réutilisables
-**body**  
-├── **navBar** *(barre de navigation)* [navBar.css]  
-│   ├── **logo** *(logo de la barre de navigation)* [navBar.css]  
+**body** [again-base.css]  
+├── **navBar** *(barre de navigation)* [again-navBar.css]  
+│   ├── **logo** *(logo de la barre de navigation)* [again-navBar.css]  
 │   ├── **-** *()*  
 │   ├── **-** *()*  
 │   └── **-** *()*   
-├── **footer** *(pied de page)*   
+├── **footer** *(pied de page)* [again-footer.css]  
 │   ├── **-** *()*   
 │   ├── **-** *()*   
 │   └── **-** *()*   
-├── **a** *(hyperlien)* [base.css]  
-├── **h1** *(Titre 1)*   
+├── **a** *(hyperlien)* [again-base.css]  
+├── **h1** *(Titre 1)* [again-base.css]  
 └── **-** *()*
-
 
 ## Nomenclature base de données
 
