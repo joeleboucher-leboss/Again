@@ -3,7 +3,8 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/again-stylesheet.css' )}}">
 </head>
 <body>
-<h1 style="text-align:center;">Ce site est en maintenance.</h1>
+  {% include 'elements/navBar.htm' %} {# INSÉRER LA BARRE DE NAVIGATION #}
+  <h1 style="text-align:center;">Ce site est en maintenance.</h1>
   {% include 'elements/footer.htm' %} {# INSÉRER LE PIED DE PAGE #}
 </body>
 </html>

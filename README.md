@@ -1,5 +1,5 @@
 # AGAIN
-<!-- Pour visualiser ce fichier joliment sur Atome comme si c'était un pdf, double-cliquer dessus dans l'arborescence à gauche et choisir "Markdown preview"-->
+<!-- Pour visualiser ce fichier joliment sur Atome comme si c'était un pdf, clic droit dessus dans l'arborescence à gauche et choisir "Markdown preview"-->
 ## Arborescence du site
 
 **app**  
@@ -46,5 +46,6 @@
 ## Nomenclature base de données
 
 ### Données Site
+Table dédiée aux informations nécessaires au fonctionnement du site:
 - **version** [string] *(La version actuelle du site en ligne)*
 - **maintenance** [bool] *(True ou False, indique si le site est en maintenance ou non)*
