@@ -1,0 +1,11 @@
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/again-stylesheet.css' )}}">
+</head>
+
+<body>
+  {% include 'elements/navBarStatic.htm' %} {# INSÉRER LA BARRE DE NAVIGATION STATIQUE #}
+  {%block content%} {%endblock%}
+  {% include 'elements/footer.htm' %} {# INSÉRER LE PIED DE PAGE #}
+</body>
+</html>

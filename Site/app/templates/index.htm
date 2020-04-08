@@ -2,14 +2,8 @@
 PARAMETRES:
 [pour l'instant aucun]
 #}
-<html>
-<head>
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/again-stylesheet.css' )}}">
-</head>
 
-<body>
-  {% include 'elements/navBar.htm' %} {# INSÉRER LA BARRE DE NAVIGATION #}
-<h1>Page d'accueil de Again</h1>
-  {% include 'elements/footer.htm' %} {# INSÉRER LE PIED DE PAGE #}
-</body>
-</html>
+{%extends "elements/base.htm"%} {#utiliser le template normal#}
+<!--#region Contenu-->
+{%block content%}<h1>Page d'accueil de Again</h1>{%endblock%}
+<!--#endregion-->

@@ -1,2 +1,12 @@
-a = True
-maintenance = True #Propriété temporaire vouée à être remplacée par une colonne dans la base de données.
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+class Config(object):
+    # ...
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'you-will-never-guess'
+
+    VERSION = "1.0.0"
+    MAINTENANCE = False

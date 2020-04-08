@@ -1,3 +1,8 @@
 <div id="navBar">
   <img alt="Again"src="{{url_for('static', filename='img/logo-A-big.png')}}" id="logo"/>
+  {%if current_user.is_authenticated%}
+  {{current_user.username}} <a href="{{url_for('logout')}}">Deconnexion</a>
+  {%else%}
+  <a href="{{url_for('login')}}">Connexion</a> <a href="{{url_for('registration')}}">S'enregistrer</a>
+  {%endif%}
 </div>
