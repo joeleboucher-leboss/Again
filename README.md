@@ -12,16 +12,25 @@ Il suffira de faire Ctrl+Maj+[ pour cacher une région et Ctrl+Maj+] pour la dé
 │   ├── **fonts** *(polices)*  
 │   ├── **img** *(images de contenu)*  
 │   └── **js** *(fichiers javascript)*  
-├── **templates** *(CETTE PARTIE SERA AMENÉE A CHANGER AVEC L'INTRODUCTION DE BOOTSTRAP)*  
+├── **templates**   
 │   ├── **elements** *(templates réutilisables)*  
 │   ├── index.htm *(page d'accueil)*  
 │   ├── login.htm *(page de connexion)*  
 │   ├── register.htm *(page d'inscription)*  
 │   └── maintenance.htm *(page de maintenance)*  
+├── **translations**   
+│   ├── **de** *(allemand)*   
+│   │   ├── .../messages.mo *(dictionnaire allemand)*  
+│   │   └── .../messages.po *(catalogue allemand)*  
+│   └── **en** *(anglais)*   
+│   │   ├── .../messages.mo *(dictionnaire anglais)*  
+│   │   └── .../messages.po *(catalogue anglais)*  
 ├── __ init __ .py *(initialisation de l'application)*  
 ├── forms.py *(contient les objets formulaires utilisés dans le site)*  
 ├── app.db *(base de données de l'application)*  
 ├── config.py *(données et variables nécessaires au fonctionnement du site)*  
+├── babel.cfg *(informations pour babel, indique où scanner les fichiers à traduire)*  
+├── messages.pot *(modèle de traduction)*  
 ├── models.py *(contient les classes des objets utilisés dans le site)*  
 └── pages.py *(contient le script principal du serveur)*
 <!--#endregion-->
@@ -81,8 +90,12 @@ Classe User dans app.models, *dérive de UserMixin et db.Model*
 <!--#region configuration du site -->
 ## Configuration du site
 Classe Config dans app.config
-- **version** [string] *(La version actuelle du site en ligne)*
-- **maintenance** [bool] *(True ou False, indique si le site est en maintenance ou non)*
+- **SQLALCHEMY_DATABASE_URI** *(adresse de la base de données)*
+- **SQLALCHEMY_TRACK_MODIFICATIONS**
+- **SECRET_KEY** [string] *(clé de sécurité contre les attaques CSRF, intégralement géré par les modules FLASK)*
+- **VERSION** [string] *(La version actuelle du site en ligne)*
+- **MAINTENANCE** [bool] *(True ou False, indique si le site est en maintenance ou non)*
+
 <!--#endregion-->
 <!--#region système d'authentification-->
 ## Système d'authentification
@@ -90,6 +103,46 @@ Classe Config dans app.config
 ### Librairies utilisées
 - On utilise la librairie *flask-login* pour gérer le système d'authentification. Cette librairie permet en outre de garder une session ouverte, et ce à travers une variable accessible également depuis les templates sans avoir à la passer en argument: *current_user*
 - On utilise la librairie *flask-wtf* pour gérer les formulaires et s'en servir comme objets et utiliser des outils de vérification optimisés
+
+<!--#endregion-->
+<!--#region Babel (traduction)-->
+## Système de traduction
+### Librairie utilisée
+On utilise la librairie *flask-babel* qui permet la gestion de plusieurs langues.
+### Fonctionnement dans l'application
+*flask-babel* propose les fonctions *_* et *lazy_gettext* qui prennent en argument une chaîne de caractères, recherchent dans un dictionnaire associé à la langue d'arrivée la chaîne de caractères et renvoie la traduction de cette chaîne.  
+
+*nuance:* lazy_gettext *n'est appelée que lorsque l'objet est utilisé, et non en avance, donc pour les formulaires, il faut utiliser cette méthode puisqu'ils sont initialisés avant que l'on connaisse la langue utilisateur*  
+
+C'est parce que la méthode qui permet d'appeler la traduction est nommée _ que l'on trouve dans le code la plupart des texts enveloppés dans des *_()*, comme suit.  
+
+    from flask_babel import _
+    #
+    render_template("index.htm", title=\_('Menu principal'))
+
+### Utilisation des dictionnaires
+Les dictionnaires sont stockés dans les répertoires du type app/translations/en/LC_MESSAGES  
+La génération d'un dictionnaire se fait en 3 parties:
+- Génération d'un **modèle de traduction** qui contient toutes les chaînes à traduire (se placer dans /Site/app)  
+
+      $ pybabel extract -F babel.cfg -k \_l -o messages.pot .
+
+    *babel.cfg* est le fichier qui indique à babel quels sont les types de fichiers à scanner (ici les fichiers .py et .htm)
+- Génération d'un catalogue de traduction (.po) pour chaque langue dans le répertoire translations/en/LC_MESSAGES  
+
+  la première fois (se placer dans /Site/app):
+
+       $ pybabel init -i messages.pot -d app/translations -l en
+
+  Si ce fichier existe déjà et qu'on souhaite le mettre à jour avec les nouveaux messages, alors il suffit de faire la mise a jour depuis le logiciel Poedit.   
+  En utilisant ce même logiciel, on procède à la **traduction** des messages et on enregistre bien le fichier .po que l'on est en train de modifier.  
+  **TOUJOURS DÉCHOCHER L'OPTION A REVISER DANS LES TRADUCTIONS, SINON CE NE SERA PAS PRIS EN COMPTE**
+
+- on compile le tout en une sorte de dictionnaire utilisable par babel (.mo) avec la commande (se placer dans /Site):
+
+      $ pybabel compile -d app/translations
+
+
 <!--#endregion-->
 <!--#region références-->
 ## Références

@@ -3,6 +3,7 @@ from flask import request
 from werkzeug.urls import url_parse
 #from jinja2 import Template #pour déboguer
 from app import app, db
+from flask_babel import _, refresh
 from flask_login import current_user, login_user, logout_user
 from app.models import User
 from app.config import Config
