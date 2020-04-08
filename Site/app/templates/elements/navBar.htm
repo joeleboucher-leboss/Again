@@ -1,8 +1,14 @@
-<div id="navBar">
-  <img alt="Again"src="{{url_for('static', filename='img/logo-A-big.png')}}" id="logo"/>
+<nav class="navbar navbar-light bg-light">
+  <div>
+    <img alt="Again"src="{{url_for('static', filename='img/logo-A-big.png')}}" id="logo" style="width:50px;height:50px;"/>
+    <a class="navbar-brand">gain</a>
+  </div>
+  <div>
   {%if current_user.is_authenticated%}
-  {{current_user.username}} <a href="{{url_for('logout')}}">Deconnexion</a>
+  {{current_user.username}} <a class="btn btn-secondary" href="{{url_for('logout')}}" role="button">Deconnexion</a>
   {%else%}
-  <a href="{{url_for('login')}}">Connexion</a> <a href="{{url_for('registration')}}">S'enregistrer</a>
+  <a class="btn btn-primary" href="{{url_for('login')}}" role="button">Connexion</a>
+  <a class="btn btn-primary" href="{{url_for('registration')}}" role="button">S'enregistrer</a>
   {%endif%}
 </div>
+</nav>

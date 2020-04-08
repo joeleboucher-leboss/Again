@@ -26,6 +26,7 @@ Il suffira de faire Ctrl+Maj+[ pour cacher une région et Ctrl+Maj+] pour la dé
 └── pages.py *(contient le script principal du serveur)*
 <!--#endregion-->
 <!--#region Pages HTML-->
+
 ## Organisation page HTML
 - section *barre de navigation*
 - section *contenu*
@@ -33,7 +34,7 @@ Il suffira de faire Ctrl+Maj+[ pour cacher une région et Ctrl+Maj+] pour la dé
 
 ### Pages principales
 - **login.htm *(connexion)***  
-  arguments: --  
+  arguments: form  
   utilise: navBar.htm, footer.htm
 - **register.htm *(inscription)***  
   arguments: form  
@@ -42,7 +43,7 @@ Il suffira de faire Ctrl+Maj+[ pour cacher une région et Ctrl+Maj+] pour la dé
   arguments: --  
   utilise: navBar.htm, footer.htm
 - **maintenance.htm *(page utilisée pour bloquer le site)***  
-  arguments:  
+  arguments: --  
   utilise:  navBarStatic.htm, footer.htm  
 
 ### Templates réutilisables
@@ -56,23 +57,8 @@ Il suffira de faire Ctrl+Maj+[ pour cacher une région et Ctrl+Maj+] pour la dé
 
 <!--#endregion-->
 <!--#region CSS-->
-## Nomenclature CSS
-*Cette rubrique entière sera amenée à changer avec l'introduction de Bootstrap*
-### Elements réutilisables
-
-**body** [again-base.css]  
-├── **navBar** *(barre de navigation)* [again-navBar.css]  
-│   ├── **logo** *(logo de la barre de navigation)* [again-navBar.css]  
-│   ├── **-** *()*  
-│   ├── **-** *()*  
-│   └── **-** *()*   
-├── **footer** *(pied de page)* [again-footer.css]  
-│   ├── **-** *()*   
-│   ├── **-** *()*   
-│   └── **-** *()*   
-├── **a** *(hyperlien)* [again-base.css]  
-├── **h1** *(Titre 1)* [again-base.css]  
-└── **-** *()*
+## Bibliothèque css
+On utilise une version personnalisée de bootstrap.css pour offrir une expérience fluide et agréable (et pour gagner en temps de développement)
 <!--#endregion-->
 <!--#region BDD-->
 ## Nomenclature base de données
@@ -104,4 +90,9 @@ Classe Config dans app.config
 ### Librairies utilisées
 - On utilise la librairie *flask-login* pour gérer le système d'authentification. Cette librairie permet en outre de garder une session ouverte, et ce à travers une variable accessible également depuis les templates sans avoir à la passer en argument: *current_user*
 - On utilise la librairie *flask-wtf* pour gérer les formulaires et s'en servir comme objets et utiliser des outils de vérification optimisés
+<!--#endregion-->
+<!--#region références-->
+## Références
+[The flask mega tutorial](https://l.messenger.com/l.php?u=https%3A%2F%2Fblog.miguelgrinberg.com%2Fpost%2Fthe-flask-mega-tutorial-part-i-hello-world&h=AT0SJg8btXHBXAVtOC1ykmdBcyK92XKPvsI6ofYi1LFKN7TFkgr9N_FECaThZVsaruGnKIoSFfYjS_4x6_aT_QUEZChbn8R4B2NngwjbHl7TBJ1APa6R0bQreqgGM0dLo7g)  
+[Documentation bootstrap](https://bootstrap.build/app)
 <!--#endregion-->
