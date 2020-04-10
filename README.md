@@ -144,6 +144,11 @@ La génération d'un dictionnaire se fait en 3 parties:
 
 
 <!--#endregion-->
+<!--#region Choses à améliorer-->
+## Choses à améliorer
+- **Les cartes :** créer un template de cartes pour le menu compte et des fichiers séparés pour leur contenu
+
+<!--#endregion-->
 <!--#region références-->
 ## Références
 [The flask mega tutorial](https://l.messenger.com/l.php?u=https%3A%2F%2Fblog.miguelgrinberg.com%2Fpost%2Fthe-flask-mega-tutorial-part-i-hello-world&h=AT0SJg8btXHBXAVtOC1ykmdBcyK92XKPvsI6ofYi1LFKN7TFkgr9N_FECaThZVsaruGnKIoSFfYjS_4x6_aT_QUEZChbn8R4B2NngwjbHl7TBJ1APa6R0bQreqgGM0dLo7g)  
