@@ -48,32 +48,12 @@
         <div class='row'>
           <div class="col-sm-6">
             <!--#region Carte Argent disponible -->
-            <div class="card card-flip h-100">
-                <div class="card-front text-white bg-dark">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Porte-monnaie')}}</h3>
-                        <p class="card-text">{{_('Consultez votre solde et le montant de vos ventes en attente')}}</p>
-                    </div>
-                </div>
-                <div class="card-back bg-white">
-                    <div class="card-body">
-                        <h3 class="card-title">{{_('Votre solde')}}</h3>
-                        <p class="card-text">{{_('Pas de ventes en attente.')}}</p>
-                    </div>
-                </div>
-              </div>
+            {%include "elements/cards/portefeuille.htm"%}
               <!--#endregion -->
           </div>
           <div class="col-sm-6">
             <!--#region historique Achats -->
-            <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Historique Achats')}}</h3>
-                        <p class="card-text">{{_('Consultez ici vos commandes passées')}}</p>
-                    </div>
-              </div>
+            {%include "elements/cards/historique-achats.htm"%}
             <!--#endregion-->
           </div>
         </div>
@@ -83,24 +63,12 @@
         <div class='row'>
           <div class="col-sm-6">
             <!--#region Achats en cours -->
-            <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Achats en cours')}}</h3>
-                        <p class="card-text">{{_('Consultez ici vos achats en cours')}}</p>
-                    </div>
-              </div>
+            {%include "elements/cards/achats-en-cours.htm"%}
             <!--#endregion-->
           </div>
           <div class="col-sm-6">
             <!--#region Ventes en cours -->
-            <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Ventes en cours')}}</h3>
-                        <p class="card-text">{{_('Consultez ici vos ventes en cours')}}</p>
-                    </div>
-              </div>
+            {%include "elements/cards/ventes-en-cours.htm"%}
             <!--#endregion-->
           </div>
         </div>
@@ -110,35 +78,17 @@
         <div class='row'>
           <div class="col-sm-4">
             <!--#region Ident. -->
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="fa fa-search fa-5x float-right"></i>
-                <h3 class="card-title">{{_('Ident.')}}</h3>
-                <p class="card-text">{{_("Description mais je ne sais pas ce que c'est en vrai ^^\'")}}</p>
-              </div>
-            </div>
+            {%include "elements/cards/ident.htm"%}
             <!--#endregion-->
           </div>
           <div class="col-sm-4">
             <!--#region Adresse -->
-            <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Adresse - Aix')}}</h3>
-                        <p class="card-text">{{_('Modifiez votre adresse')}}</p>
-                    </div>
-              </div>
+            {%include "elements/cards/adresse.htm"%}
             <!--#endregion-->
           </div>
           <div class="col-sm-4">
             <!--#region Abonnements -->
-            <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fa fa-search fa-5x float-right"></i>
-                        <h3 class="card-title">{{_('Abonnements')}}</h3>
-                        <p class="card-text">{{_('Gérez vos abonnements')}}</p>
-                    </div>
-              </div>
+            {%include "elements/cards/abonnements.htm"%}
             <!--#endregion-->
           </div>
         </div>
