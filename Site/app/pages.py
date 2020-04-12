@@ -9,6 +9,7 @@ from app.models import User
 from app.config import Config
 from app.forms import LoginForm, RegistrationForm
 import os
+from app.admin import *
 
 # routage pour l'icône du site
 @app.route('/favicon.ico')
@@ -28,7 +29,7 @@ def maintenance():
 
     if app.config['MAINTENANCE'] == False: #si le site n'est pas en maintenance
         return redirect('/') #renvoyer à l'accueil du site
-    return render_template('maintenance.htm', title=_("Cette page est en maintenance.")) #page de maintenance
+    return render_template('errors/maintenance.htm', title=_("Cette page est en maintenance.")) #page de maintenance
 
 @app.route('/login', methods=['GET','POST'])
 def login():

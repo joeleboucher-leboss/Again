@@ -17,7 +17,7 @@
   <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
     <a class="dropdown-item" href="#">{{_('Paramètres')}}</a>
     <a class="dropdown-item" href="#">Another action</a>
-    {%if current_user.is_admin%}<a class="dropdown-item" href="{{url_for('admin_dashboard')}}">{{_('Gestion du site')}}</a>{%endif%}
+    <a class="dropdown-item" href="{{url_for('index')}}">{{_('Accueil')}}</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="{{url_for('logout')}}">{{_('Déconnexion')}}</a>
   </div>

@@ -146,7 +146,7 @@ La génération d'un dictionnaire se fait en 3 parties:
 <!--#endregion-->
 <!--#region Choses à améliorer-->
 ## Choses à améliorer
-- **Les cartes :** créer un template de cartes pour le menu compte et des fichiers séparés pour leur contenu
+
 
 <!--#endregion-->
 <!--#region références-->
