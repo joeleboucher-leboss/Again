@@ -1,0 +1,6 @@
+<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">{{_('Accueil administration')}}</a>
+      {%for menu in admin_menus%}
+      <a class="nav-link" id="v-pills-{{menu.name.replace(' ', '_')}}-tab" data-toggle="pill" href="#v-pills-{{menu.name.replace(' ', '_')}}" role="tab" aria-controls="v-pills-{{menu.name.replace(' ', '_')}}" aria-selected="false">{{menu.name}}</a>
+      {%endfor%}
+</div>

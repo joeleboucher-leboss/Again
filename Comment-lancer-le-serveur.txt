@@ -1,0 +1,23 @@
+Pour lancer le serveur (Windows)
+================================
+
+LA PREMIERE FOIS
+________________
+
+• S'assurer que l'on a bien installé virtualenv, sinon dans le terminal lancer la commande:
+$ pip install virtualenv
+
+CHAQUE FOIS QUE L'ON ROUVRE LE serveur
+_______________________________________
+
+• Lancer le terminal (cmd) et naviguer jusque dans le répertoire où se situe la copie locale du GIT (pour ma part dans C:\Utilisateurs\Thomas\Documents\Github\Again)
+
+• Lancer la commande:
+$ Site\Scripts\activate
+
+  Normalement on devrait voir (Site) apparaître tout a gauche, on se situe dans l'environnement python virtuel
+
+• Lancer le serveur:
+$ flask run
+
+• Pour accéder au site, se référer à l'adresse qui apparaît sur la console.

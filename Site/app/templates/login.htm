@@ -1,0 +1,33 @@
+{#
+PARAMETRES:
+form [formulaire de connexion]
+#}
+
+{%extends "elements/base.htm"%} {#utiliser le template normal#}
+
+<!--#region Contenu-->
+{%block content%}
+
+<h1>{{_('Connexion')}}</h1>
+<form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <div class="alert alert-warning alert-dismissible fade" role="alert">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <div class="alert alert-warning alert-dismissible fade" role="alert">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{%endblock%}
+<!--#endregion-->

@@ -1,0 +1,102 @@
+<!--#region barre de navigation -->
+<nav class="navbar navbar-light bg-light">
+  <div>
+    <a class="btn btn-primary" href="#" role="button">{{_('Vendre')}}</a>
+  </div>
+
+  <img alt="Again"src="{{url_for('static', filename='img/logo-A-big.png')}}" id="logo" style="width:50px;height:50px;"/>
+
+  {%if current_user.is_authenticated%} {# Si l'utilisateur est connecté #}
+
+  <!--#region Bouton liste déroulante Compte utilisateur-->
+<div class="btn-group dropdown">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#accountModal"><img class="rounded-circle" style="width:30px;height:30px;" src="{{url_for('static', filename='img/avatar/default-avatar.png')}}"/> {{current_user.username}}{%if current_user.is_admin%} <i>({{_('admin')}})</i>{%endif%}</button>
+  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" aria-controls="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+    <a class="dropdown-item" href="#">{{_('Paramètres')}}</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="{{url_for('index')}}">{{_('Accueil')}}</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="{{url_for('logout')}}">{{_('Déconnexion')}}</a>
+  </div>
+</div>
+<!--#endregion-->
+
+  {%else%}
+  <!--#region Boutons Connexion/S'enregistrer-->
+  <div>
+  <a class="btn btn-primary" href="{{url_for('login')}}" role="button">{{_('Connexion')}}</a>
+  <a class="btn btn-primary" href="{{url_for('registration')}}" role="button">{{_("S'enregistrer")}}</a>
+  </div>
+  <!--#endregion-->
+  {%endif%}
+
+</nav>
+<!--#endregion -->
+
+{%if current_user.is_authenticated%} {# Si l'utilisateur est connecté #}
+<!--#region Overlay compte avec toutes les cartes -->
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl"  role="document"> <!--les cartes -->
+    <div class="modal-content">
+      <div class="modal-body">
+        <!--création d'une grille-->
+        <br />
+        <!--#region ligne 1 -->
+        <div class='row'>
+          <div class="col-sm-6">
+            <!--#region Carte Argent disponible -->
+            {%include "elements/cards/portefeuille.htm"%}
+              <!--#endregion -->
+          </div>
+          <div class="col-sm-6">
+            <!--#region historique Achats -->
+            {%include "elements/cards/historique-achats.htm"%}
+            <!--#endregion-->
+          </div>
+        </div>
+        <!--#endregion-->
+        <br />
+        <!--#region ligne 2 -->
+        <div class='row'>
+          <div class="col-sm-6">
+            <!--#region Achats en cours -->
+            {%include "elements/cards/achats-en-cours.htm"%}
+            <!--#endregion-->
+          </div>
+          <div class="col-sm-6">
+            <!--#region Ventes en cours -->
+            {%include "elements/cards/ventes-en-cours.htm"%}
+            <!--#endregion-->
+          </div>
+        </div>
+        <!--#endregion-->
+        <br />
+        <!--#region ligne 3 -->
+        <div class='row'>
+          <div class="col-sm-4">
+            <!--#region Ident. -->
+            {%include "elements/cards/ident.htm"%}
+            <!--#endregion-->
+          </div>
+          <div class="col-sm-4">
+            <!--#region Adresse -->
+            {%include "elements/cards/adresse.htm"%}
+            <!--#endregion-->
+          </div>
+          <div class="col-sm-4">
+            <!--#region Abonnements -->
+            {%include "elements/cards/abonnements.htm"%}
+            <!--#endregion-->
+          </div>
+        </div>
+        <!--#endregion-->
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
+<!--#endregion-->
+{%endif%}
