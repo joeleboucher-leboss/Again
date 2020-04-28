@@ -1,1 +1,32 @@
-PAGE DE RÉGLAGE DES CATÉGORIES
+{#
+PARAMETRES:
+categories
+
+VERSION TEMPORAIRE
+#}
+<h1>{{_('Page de gestion des catégories')}}</h1>
+<br />
+<div class="alert alert-info" role="alert">
+  {{_("Page encore en construction, soyez rassurés. Elle fonctionne, mais elle est encore loin d'être pratique.")}}
+</div>
+<div class="row">
+  <div class="col-5">
+    {%for category in categories recursive%}
+    {{category.name}}<br />
+    <div style="padding-left:20px; border-left-style:solid;border-width:1px;">{{loop(category.children)}}<a href="javascript:void(0)" onclick="changeFormParentId({{category.id}}, '{{category.name}}');">Ajouter</a></div>
+    {%endfor%}
+    <a href="javascript:void(0)" onclick="changeFormParentId('','{{_('racine')}}');">Ajouter</a>
+  </div>
+  <div class="col-7" style="border-left-style:solid;border-width:1px;">
+    {%with parent_id=Null%}
+    {%include "admin/modules/submodules/add_category_form.htm"%}
+    {%endwith%}
+  </div>
+</div>
+<script type="text/javascript">
+function changeFormParentId(parent_id, parent_id_name)
+{
+  document.getElementById('parent_id').value = parent_id;
+  document.getElementById('parent_category').innerHTML = parent_id_name;
+}
+</script>

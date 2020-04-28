@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-09 01:41+0200\n"
-"PO-Revision-Date: 2020-04-09 01:42+0200\n"
+"POT-Creation-Date: 2020-04-12 08:20+0200\n"
+"PO-Revision-Date: 2020-04-12 08:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -18,6 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.8.0\n"
 "X-Generator: Poedit 2.3\n"
+
+#: admin.py:24
+msgid "Panneau de bord"
+msgstr "Dashboard"
+
+#: admin_modules.py:13
+msgid "Catégories"
+msgstr "Categories"
+
+#: admin_modules.py:13
+msgid "Produits standarts"
+msgstr "Standart products"
+
+#: admin_modules.py:14
+msgid "Lots"
+msgstr "Prizes"
 
 #: forms.py:8 forms.py:14
 msgid "pseudo"
@@ -43,7 +59,8 @@ msgstr "e-mail"
 msgid "confirmer le mot de passe"
 msgstr "Confirm password"
 
-#: forms.py:19 templates/elements/navBar.htm:11 templates/register.htm:9
+#: forms.py:19 pages.py:79 templates/elements/adminNavBar.htm:31
+#: templates/elements/navBar.htm:31 templates/register.htm:9
 msgid "S'enregistrer"
 msgstr "Register"
 
@@ -55,18 +72,135 @@ msgstr "Please choose another username"
 msgid "Veuillez utiliser une autre adresse e-mail"
 msgstr "Please choose another e-mail adress"
 
+#: pages.py:25
+msgid "Loterie entre particuliers"
+msgstr "Community Lotery"
+
+#: pages.py:32
+msgid "Cette page est en maintenance."
+msgstr "This website is under maintenance."
+
+#: pages.py:55 templates/elements/adminNavBar.htm:30
+#: templates/elements/navBar.htm:30 templates/login.htm:11
+msgid "Connexion"
+msgstr "Log in"
+
 #: templates/index.htm:8
 msgid "Page d'accueil de Again"
 msgstr "Again homepage"
 
-#: templates/elements/navBar.htm:10 templates/login.htm:11
-msgid "Connexion"
-msgstr "Log in"
+#: templates/admin/dashboard.htm:4
+msgid "Accueil administrateur"
+msgstr "Administrator homepage"
 
-#: templates/maintenance.htm:9
+#: templates/admin/elements/sidebar.htm:2
+msgid "Accueil administration"
+msgstr "Administrator homepage"
+
+#: templates/admin/modules/categories.htm:6
+msgid "Page de gestion des catégories"
+msgstr "Manage categories"
+
+#: templates/admin/modules/categories.htm:7
+msgid "Nouvelle catégorie racine"
+msgstr "New root category"
+
+#: templates/admin/modules/standarts.htm:1
+msgid "Page des produits standarts"
+msgstr "Manage standart products"
+
+#: templates/elements/adminNavBar.htm:4 templates/elements/navBar.htm:4
+msgid "Vendre"
+msgstr "Sell"
+
+#: templates/elements/adminNavBar.htm:13 templates/elements/navBar.htm:13
+msgid "admin"
+msgstr "admin"
+
+#: templates/elements/adminNavBar.htm:18 templates/elements/navBar.htm:18
+msgid "Paramètres"
+msgstr "Settings"
+
+#: templates/elements/adminNavBar.htm:20
+msgid "Accueil"
+msgstr "Home"
+
+#: templates/elements/adminNavBar.htm:22 templates/elements/navBar.htm:22
+msgid "Déconnexion"
+msgstr "Log out"
+
+#: templates/elements/navBar.htm:20
+msgid "Gestion du site"
+msgstr "Manage website"
+
+#: templates/elements/cards/abonnements.htm:3
+msgid "Abonnements"
+msgstr "Subscriptions"
+
+#: templates/elements/cards/abonnements.htm:5
+msgid "Gérez vos abonnements"
+msgstr "Manage subscriptions"
+
+#: templates/elements/cards/achats-en-cours.htm:3
+msgid "Achats en cours"
+msgstr "Tickets"
+
+#: templates/elements/cards/achats-en-cours.htm:5
+msgid "Consultez ici vos achats en cours"
+msgstr "View your tickets"
+
+#: templates/elements/cards/adresse.htm:3
+msgid "Adresse - Aix"
+msgstr "Adress - Aix"
+
+#: templates/elements/cards/adresse.htm:5
+msgid "Modifiez votre adresse"
+msgstr "Change your adress"
+
+#: templates/elements/cards/historique-achats.htm:3
+msgid "Historique Achats"
+msgstr "Ticket history"
+
+#: templates/elements/cards/historique-achats.htm:5
+msgid "Consultez ici vos commandes passées"
+msgstr "View your past tickets"
+
+#: templates/elements/cards/ident.htm:3
+msgid "Ident."
+msgstr "Ident"
+
+#: templates/elements/cards/ident.htm:5
+msgid "Description mais je ne sais pas ce que c'est en vrai ^^'"
+msgstr "Description - I don't really know what this is ^^'"
+
+#: templates/elements/cards/portefeuille.htm:3
+msgid "Porte-monnaie"
+msgstr "Wallet"
+
+#: templates/elements/cards/portefeuille.htm:5
+msgid "Consultez votre solde et le montant de vos ventes en attente"
+msgstr "View your balance and your pending payout"
+
+#: templates/elements/cards/portefeuille.htm:7
+msgid "Votre solde"
+msgstr "Your balance"
+
+#: templates/elements/cards/portefeuille.htm:9
+msgid "Pas de ventes en attente"
+msgstr "No pending payout"
+
+#: templates/elements/cards/ventes-en-cours.htm:3
+msgid "Ventes en cours"
+msgstr "Sales"
+
+#: templates/elements/cards/ventes-en-cours.htm:5
+msgid "Consultez ici vos ventes en cours"
+msgstr "View your ongoing sales"
+
+#: templates/errors/maintenance.htm:9
 msgid "Ce site est en maintenance."
 msgstr "This website is under maintenance."
 
-#: templates/elements/navBar.htm:8
-msgid "Deconnexion"
-msgstr "Log in"
+#: templates/errors/no-access.htm:9
+msgid "L'accès à cette page est restreint."
+msgstr "Acess to this page is limited"

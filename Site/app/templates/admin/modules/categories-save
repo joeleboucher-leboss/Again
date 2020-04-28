@@ -1,0 +1,55 @@
+{#
+PARAMETRES:
+categories
+#}
+<h1>{{_('Page de gestion des catégories')}}</h1>
+
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <br />
+      {%for category in categories%}
+      <a class="list-group-item list-group-item-action h" id="list-{{category.name.replace(' ','_')}}-list" data-toggle="list" href="#list-{{category.name.replace(' ','_')}}" role="tab" aria-controls="{{category.name.replace(' ','_')}}">{{category.name}}</a>
+      {%endfor%}
+      <a class="list-group-item list-group-item-action h" id="list-addCategory-list" data-toggle="list" href="#list-addCategory" role="tab" aria-controls="list-addCategory">{{_("Ajouter...")}}</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <!-- entre ici... -->
+
+      {%for category in categories recursive%}
+      <div class="tab-pane fade show active" id="list-{{category.name.replace(' ','_')}}" role="tabpanel" aria-labelledby="list-{{category.name.replace(' ','_')}}-list">
+        <div class="row">
+          <div class="col-6">
+            <div class="{{category.name.replace(' ','_')}}-list-group" id="list-tab" role="tablist">
+              <br />
+              {%for subcategory in category.children%}
+              <a class="list-group-item list-group-item-action" id="list-{{subcategory.name.replace(' ','_')}}-list" data-toggle="list" href="#list-{{subcategory.name.replace(' ','_')}}" role="tab" aria-controls="{{subcategory.name.replace(' ','_')}}">{{subcategory.name}}</a>
+              {%endfor%}
+              <a class="list-group-item list-group-item-action" id="list-{{category.name.replace(' ','_')}}-addCategory-list" data-toggle="list" href="#list-{{category.name.replace(' ','_')}}-addCategory" role="tab" aria-controls="{{category.name.replace(' ','_')}}-addCategory">{{_("Ajouter...")}}</a>
+
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="tab-content" id="{{category.name.replace(' ','_')}}-nav-tabContent">
+              {{loop(category.children)}}
+              <div class="tab-pane fade show" id="list-{{category.name.replace(' ','_')}}-addCategory" role="tabpanel" aria-labelledby="list-{{category.name.replace(' ','_')}}-addCategory-list">
+                Ajouter
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {%endfor%}
+      <div class="tab-pane fade" id="list-addCategory" role="tabpanel" aria-labelledby="list-addCategory-list">
+        {%with parent_category = 0%}
+        {%include 'admin/modules/submodules/add_category_form.htm'%}
+        {%endwith%}
+      </div>
+    </div>
+
+  <!--... et ici -->
+  </div>
+</div>

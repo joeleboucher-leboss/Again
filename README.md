@@ -72,7 +72,7 @@ On utilise une version personnalisée de bootstrap.css pour offrir une expérien
 <!--#region BDD-->
 ## Nomenclature base de données
 ### Gestionnaire de bases de Données
-- On utilise la librairie *flask-sqlalchemy* qui permet de définir et utiliser les lignes d'une base de données comme des objets dont on définit soi-même une classe. Ceci permet d'être très efficace sans avoir à écrire de SQL, et on gagne beaucoup en clarté, concision et élégance.
+- On utilise la librairie *flask-sqlalchemy* qui permet de définir et utiliser les lignes d'une base de données comme des objets dont on définit soi-même une classe. Ceci permet d'être très efficace sans avoir à écrire de SQL, et on gagne beaucoup en clarté, concision et élégance. (voir ORM: object-relationnal mapping)
 - On utilise la librairie *flask-migrate* qui permet de mettre a jour la structure d'une base de données existante  
       $ flask db migrate -m 'message'
 

@@ -1,0 +1,5 @@
+<h2>{{_("Parcourir les produits existants")}}</h2>
+<!-- pour l'instant on se contente de les lister -->
+{%for standartproduct in standartproducts%}
+- {{standartproduct.prize_name}} | {{standartproduct.prize_description}}
+{%endfor%}

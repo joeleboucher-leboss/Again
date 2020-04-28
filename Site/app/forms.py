@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from flask_babel import lazy_gettext as _
 from app.models import User
@@ -27,3 +27,14 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError(_('Veuillez utiliser une autre adresse e-mail'))
+
+class Admin_NewCategoryForm(FlaskForm):
+    name = StringField(_('nom'), validators=[DataRequired()])
+    parent_id = HiddenField()
+    newCategorySubmit = SubmitField(_('ajouter'))
+
+class Admin_NewStandartProduct(FlaskForm):
+    category = HiddenField()
+    name = StringField(_('nom'), validators=[DataRequired()])
+    description = StringField(_('Description'))
+    newStandartProductSubmit = SubmitField(_('ajouter'))
