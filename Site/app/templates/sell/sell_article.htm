@@ -1,0 +1,16 @@
+{#
+PARAMETRES:
+title : nom de la page
+#}
+{%extends "elements/base.htm"%}
+{%block alerts%}
+<div class="alert alert-dark" role="alert">
+  {{_("Il s'agit pour l'instant d'une page vitrine.")}}
+</div>
+{%endblock%}
+{%block content%}
+<!--ici le contenu de la page-->
+<h1>Le contenu de la page</h1>
+<a href="{{url_for('sell_preview')}}">Confirmer</a>
+
+{%endblock%}
