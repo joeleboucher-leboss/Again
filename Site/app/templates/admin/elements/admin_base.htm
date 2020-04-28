@@ -9,12 +9,11 @@
 <body>
   {% include 'elements/adminNavBar.htm' %} {# INSÉRER LA BARRE DE NAVIGATION #}
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-2">
       {%include 'admin/elements/sidebar.htm'%}
     </div>
+    <div class="col-10">
       {%block content%}{%endblock%}
-    </div>
-    <div class="col-sm-2">
     </div>
   </div>
   {% include 'elements/footer.htm' %} {# INSÉRER LE PIED DE PAGE #}

@@ -1,0 +1,10 @@
+<h2>{{_('Créer un nouveau produit standart')}}</h2>
+<form action='#' method="POST" novalidate>
+{{newstandartproductform.hidden_tag()}}<br/>
+{{newstandartproductform.category()}}<br/>
+{{newstandartproductform.name.label}}<br/>
+{{newstandartproductform.name()}}<br/>
+{{newstandartproductform.description.label}}<br/>
+{{newstandartproductform.description()}}<br/><br/>
+{{newstandartproductform.newStandartProductSubmit()}}
+</form>

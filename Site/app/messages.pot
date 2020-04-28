@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-09 01:41+0200\n"
+"POT-Creation-Date: 2020-04-12 08:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+
+#: admin.py:24
+msgid "Panneau de bord"
+msgstr ""
+
+#: admin_modules.py:13
+msgid "Catégories"
+msgstr ""
+
+#: admin_modules.py:13
+msgid "Produits standarts"
+msgstr ""
+
+#: admin_modules.py:14
+msgid "Lots"
+msgstr ""
 
 #: forms.py:8 forms.py:14
 msgid "pseudo"
@@ -41,7 +57,8 @@ msgstr ""
 msgid "confirmer le mot de passe"
 msgstr ""
 
-#: forms.py:19 templates/elements/navBar.htm:11 templates/register.htm:9
+#: forms.py:19 pages.py:79 templates/elements/adminNavBar.htm:31
+#: templates/elements/navBar.htm:31 templates/register.htm:9
 msgid "S'enregistrer"
 msgstr ""
 
@@ -53,19 +70,136 @@ msgstr ""
 msgid "Veuillez utiliser une autre adresse e-mail"
 msgstr ""
 
+#: pages.py:25
+msgid "Loterie entre particuliers"
+msgstr ""
+
+#: pages.py:32
+msgid "Cette page est en maintenance."
+msgstr ""
+
+#: pages.py:55 templates/elements/adminNavBar.htm:30
+#: templates/elements/navBar.htm:30 templates/login.htm:11
+msgid "Connexion"
+msgstr ""
+
 #: templates/index.htm:8
 msgid "Page d'accueil de Again"
 msgstr ""
 
-#: templates/elements/navBar.htm:10 templates/login.htm:11
-msgid "Connexion"
+#: templates/admin/dashboard.htm:4
+msgid "Accueil administrateur"
 msgstr ""
 
-#: templates/maintenance.htm:9
+#: templates/admin/elements/sidebar.htm:2
+msgid "Accueil administration"
+msgstr ""
+
+#: templates/admin/modules/categories.htm:6
+msgid "Page de gestion des catégories"
+msgstr ""
+
+#: templates/admin/modules/categories.htm:7
+msgid "Nouvelle catégorie racine"
+msgstr ""
+
+#: templates/admin/modules/standarts.htm:1
+msgid "Page des produits standarts"
+msgstr ""
+
+#: templates/elements/adminNavBar.htm:4 templates/elements/navBar.htm:4
+msgid "Vendre"
+msgstr ""
+
+#: templates/elements/adminNavBar.htm:13 templates/elements/navBar.htm:13
+msgid "admin"
+msgstr ""
+
+#: templates/elements/adminNavBar.htm:18 templates/elements/navBar.htm:18
+msgid "Paramètres"
+msgstr ""
+
+#: templates/elements/adminNavBar.htm:20
+msgid "Accueil"
+msgstr ""
+
+#: templates/elements/adminNavBar.htm:22 templates/elements/navBar.htm:22
+msgid "Déconnexion"
+msgstr ""
+
+#: templates/elements/navBar.htm:20
+msgid "Gestion du site"
+msgstr ""
+
+#: templates/elements/cards/abonnements.htm:3
+msgid "Abonnements"
+msgstr ""
+
+#: templates/elements/cards/abonnements.htm:5
+msgid "Gérez vos abonnements"
+msgstr ""
+
+#: templates/elements/cards/achats-en-cours.htm:3
+msgid "Achats en cours"
+msgstr ""
+
+#: templates/elements/cards/achats-en-cours.htm:5
+msgid "Consultez ici vos achats en cours"
+msgstr ""
+
+#: templates/elements/cards/adresse.htm:3
+msgid "Adresse - Aix"
+msgstr ""
+
+#: templates/elements/cards/adresse.htm:5
+msgid "Modifiez votre adresse"
+msgstr ""
+
+#: templates/elements/cards/historique-achats.htm:3
+msgid "Historique Achats"
+msgstr ""
+
+#: templates/elements/cards/historique-achats.htm:5
+msgid "Consultez ici vos commandes passées"
+msgstr ""
+
+#: templates/elements/cards/ident.htm:3
+msgid "Ident."
+msgstr ""
+
+#: templates/elements/cards/ident.htm:5
+msgid "Description mais je ne sais pas ce que c'est en vrai ^^'"
+msgstr ""
+
+#: templates/elements/cards/portefeuille.htm:3
+msgid "Porte-monnaie"
+msgstr ""
+
+#: templates/elements/cards/portefeuille.htm:5
+msgid "Consultez votre solde et le montant de vos ventes en attente"
+msgstr ""
+
+#: templates/elements/cards/portefeuille.htm:7
+msgid "Votre solde"
+msgstr ""
+
+#: templates/elements/cards/portefeuille.htm:9
+msgid "Pas de ventes en attente"
+msgstr ""
+
+#: templates/elements/cards/ventes-en-cours.htm:3
+msgid "Ventes en cours"
+msgstr ""
+
+#: templates/elements/cards/ventes-en-cours.htm:5
+msgid "Consultez ici vos ventes en cours"
+msgstr ""
+
+#: templates/errors/maintenance.htm:9
 msgid "Ce site est en maintenance."
 msgstr ""
 
-#: templates/elements/navBar.htm:8
-msgid "Deconnexion"
+#: templates/errors/no-access.htm:9
+msgid "L'accès à cette page est restreint."
 msgstr ""
 

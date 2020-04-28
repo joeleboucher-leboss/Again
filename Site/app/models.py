@@ -32,18 +32,19 @@ class Category(db.Model):
     parent_id = db.Column(db.Integer, db.ForeignKey('category.id')) # identifiant de la catégorie parent (clé étrangère)
     children = db.relationship('Category') # propriété qui permet de récupérer les catégories enfant
     def __repr__(self):
-        return '<Category {}'.format(self.name)
+        return '<Category {}>'.format(self.name)
 ##endregion
 
 ##region lot
 class Prize(db.Model):
     __tablename__ = 'prizes' # définit le nom de la table qui sera utilisée
     id = db.Column(db.Integer, primary_key = True) # clé primaire
-    name = db.Column(db.String(128)) # Nom du lot
+    prize_name = db.Column(db.String(128)) # Nom du lot
     is_standart = db.Column(db.Boolean) # Indique si ce lot est une vitrine pour plusieurs lots
-    description = db.Column(db.String(64000)) # Description du lot
+    prize_description = db.Column(db.String(64000)) # Description du lot
+    prize_category = db.Column(db.Integer, db.ForeignKey('category.id'))
     # Pour l'instant pas d'image car alors il faudrait configurer FTP.
     standart_product_id = db.Column (db.Integer, db.ForeignKey('prizes.id'))
     def __repr__(self):
-        return '<Prize {}'.format(self.name)
+        return '<Prize {}>'.format(self.name)
 ##endregion
