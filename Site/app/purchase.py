@@ -13,8 +13,8 @@ import app.admin_modules as modules
 
 @app.route("/view-prize")
 def view_prize():
-    return render_template("purchase/display_product.htm", title=_('Article'))
+    return render_template("purchase/display_product.htm", title=_('Article'), site_version = app.config['VERSION'])
 
 @app.route("/purchase-confirm")
 def confirm_purchase():
-    return render_template("purchase/purchase_validated.htm", title=_('Confirmation'))
+    return render_template("purchase/purchase_validated.htm", title=_('Confirmation'), site_version = app.config['VERSION'])

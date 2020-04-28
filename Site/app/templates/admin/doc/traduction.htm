@@ -1,0 +1,31 @@
+{%with version = "0.0.1"%}
+{%if not version == site_version%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+{%endif%}
+{%endwith%}
+<h1 id="syst-me-de-traduction">Système de traduction</h1>
+<h2 id="librairie-utilis-e">Librairie utilisée</h2>
+<p>On utilise la librairie <em>flask-babel</em> qui permet la gestion de plusieurs langues.</p>
+<h3 id="fonctionnement-dans-l-application">Fonctionnement dans l&#39;application</h3>
+<p><em>flask-babel</em> propose les fonctions <em>_</em> et <em>lazy_gettext</em> qui prennent en argument une chaîne de caractères, recherchent dans un dictionnaire associé à la langue d&#39;arrivée la chaîne de caractères et renvoie la traduction de cette chaîne.  </p>
+<p><em>nuance:</em> lazy_gettext <em>n&#39;est appelée que lorsque l&#39;objet est utilisé, et non en avance, donc pour les formulaires, il faut utiliser cette méthode puisqu&#39;ils sont initialisés avant que l&#39;on connaisse la langue utilisateur</em>  </p>
+<p>C&#39;est parce que la méthode qui permet d&#39;appeler la traduction est nommée <em> que l&#39;on trouve dans le code la plupart des texts enveloppés dans des *</em>()*, comme suit.  </p>
+<pre><code>from flask_babel <span class="hljs-keyword">import</span> <span class="hljs-literal">_</span>
+<span class="hljs-meta">#</span>
+render_template(<span class="hljs-string">"index.htm"</span>, title=\<span class="hljs-literal">_</span>(<span class="hljs-string">'Menu principal'</span>))
+</code></pre><h3 id="utilisation-des-dictionnaires">Utilisation des dictionnaires</h3>
+<p>Les dictionnaires sont stockés dans les répertoires du type app/translations/en/LC_MESSAGES<br>La génération d&#39;un dictionnaire se fait en 3 parties:</p>
+<ul>
+<li><p>Génération d&#39;un <strong>modèle de traduction</strong> qui contient toutes les chaînes à traduire (se placer dans /Site/app)  </p>
+<pre><code>$ pybabel extract -F babel<span class="hljs-selector-class">.cfg</span> -k \_l -o messages<span class="hljs-selector-class">.pot</span> .
+</code></pre><p>  <em>babel.cfg</em> est le fichier qui indique à babel quels sont les types de fichiers à scanner (ici les fichiers .py et .htm)</p>
+</li>
+<li><p>Génération d&#39;un catalogue de traduction (.po) pour chaque langue dans le répertoire translations/en/LC_MESSAGES  </p>
+<p>la première fois (se placer dans /Site/app):</p>
+<pre><code> $ pybabel init -<span class="hljs-selector-tag">i</span> messages<span class="hljs-selector-class">.pot</span> -d app/translations -l en
+</code></pre><p>Si ce fichier existe déjà et qu&#39;on souhaite le mettre à jour avec les nouveaux messages, alors il suffit de faire la mise a jour depuis le logiciel Poedit.<br>En utilisant ce même logiciel, on procède à la <strong>traduction</strong> des messages et on enregistre bien le fichier .po que l&#39;on est en train de modifier.<br><strong>TOUJOURS DÉCHOCHER L&#39;OPTION A REVISER DANS LES TRADUCTIONS, SINON CE NE SERA PAS PRIS EN COMPTE</strong></p>
+</li>
+<li><p>on compile le tout en une sorte de dictionnaire utilisable par babel (.mo) avec la commande (se placer dans /Site):</p>
+<pre><code>$ pybabel compile <span class="hljs-_">-d</span> app/translations
+</code></pre></li>
+</ul>

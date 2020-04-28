@@ -1,0 +1,24 @@
+{#
+PARAMETRES: -
+#}
+{%with version = "0.0.1"%}
+{%if not version == site_version%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+{%endif%}
+{%endwith%}
+<h1>{{_('Schéma relationnel')}}</h1>
+<a class="btn btn-primary" href="https://dbdiagram.io/d/5ea80ed939d18f5553fe5853" role="button">{{_('Modifier en ligne')}}</a>
+<br />
+<br />
+<iframe width="90%" height="700px" src='https://dbdiagram.io/embed/5ea80ed939d18f5553fe5853'> </iframe>
+<br/>
+<h1 id="gestionnaire-de-bases-de-donn-es">Gestionnaire de bases de Données</h1>
+<br /><br />
+<ul>
+<li>On utilise la librairie <em>flask-sqlalchemy</em> qui permet de définir et utiliser les lignes d&#39;une base de données comme des objets dont on définit soi-même une classe. Ceci permet d&#39;être très efficace sans avoir à écrire de SQL, et on gagne beaucoup en clarté, concision et élégance. (voir ORM: object-relationnal mapping)</li>
+<li>On utilise la librairie <em>flask-migrate</em> qui permet de créer une migration pour une base de données existante  <pre><code><span class="hljs-variable">$ </span>flask db migrate -m <span class="hljs-string">'message'</span>
+</code></pre></li>
+<li>Ne pas oublier ensuite de mettre à jour la structure de la base de données en appliquant la migration<pre><code><span class="hljs-variable">$ </span>flask db upgrade<br/>$ flask db stamp head
+</code></pre></li>
+
+</ul>

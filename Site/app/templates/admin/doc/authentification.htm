@@ -1,0 +1,14 @@
+{#
+PARAMETRES: -
+#}
+{%with version = "0.0.1"%}
+{%if not version == site_version%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+{%endif%}
+{%endwith%}
+<h1 id="syst-me-d-authentification">Système d&#39;authentification</h1>
+<h3 id="librairies-utilis-es">Librairies utilisées</h3>
+<ul>
+<li>On utilise la librairie <em>flask-login</em> pour gérer le système d&#39;authentification. Cette librairie permet en outre de garder une session ouverte, et ce à travers une variable accessible également depuis les templates sans avoir à la passer en argument: <em>current_user</em></li>
+<li>On utilise la librairie <em>flask-wtf</em> pour gérer les formulaires et s&#39;en servir comme objets et utiliser des outils de vérification optimisés</li>
+</ul>

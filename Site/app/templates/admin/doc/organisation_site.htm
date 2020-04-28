@@ -1,0 +1,35 @@
+{%with version = "0.0.0"%}
+{%if not version == site_version%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+{%endif%}
+{%endwith%}
+<h1 id="arborescence-du-site">Arborescence du site</h1>
+<p>
+<strong>app</strong>
+  <br>├──<strong>static</strong><br>
+  │   ├── <strong>css</strong> <em>(feuilles de style)</em><br>
+  │   ├── <strong>fonts</strong> <em>(polices)</em><br>
+  │   ├── <strong>img</strong> <em>(images de contenu)</em><br>
+  │   └── <strong>js</strong> <em>(fichiers javascript)</em><br>
+  ├── <strong>templates</strong><br>
+  │   ├── <strong>elements</strong> <em>(templates réutilisables)</em><br>
+  │   ├── index.htm <em>(page d&#39;accueil)</em><br>
+  │   ├── login.htm <em>(page de connexion)</em><br>
+  │   ├── register.htm <em>(page d&#39;inscription)</em><br>
+  │   └── maintenance.htm <em>(page de maintenance)</em><br>
+  ├── <strong>translations</strong><br>
+  │   ├── <strong>de</strong> <em>(allemand)</em><br>
+  │   │   ├── .../messages.mo <em>(dictionnaire allemand)</em><br>
+  │   │   └── .../messages.po <em>(catalogue allemand)</em><br>
+  │   └── <strong>en</strong> <em>(anglais)</em><br>
+  │   │   ├── .../messages.mo <em>(dictionnaire anglais)</em><br>
+  │   │   └── .../messages.po <em>(catalogue anglais)</em><br>
+  ├── <strong> init </strong> .py <em>(initialisation de l&#39;application)</em><br>
+  ├── forms.py <em>(contient les objets formulaires utilisés dans le site)</em><br>
+  ├── app.db <em>(base de données de l&#39;application)</em><br>
+  ├── config.py <em>(données et variables nécessaires au fonctionnement du site)</em><br>
+  ├── babel.cfg <em>(informations pour babel, indique où scanner les fichiers à traduire)</em><br>
+  ├── messages.pot <em>(modèle de traduction)</em><br>
+  ├── models.py <em>(contient les classes des objets utilisés dans le site)</em><br>
+  └── pages.py <em>(contient le script principal du serveur)</em>
+</p>
