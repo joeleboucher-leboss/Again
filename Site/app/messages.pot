@@ -202,4 +202,3 @@ msgstr ""
 #: templates/errors/no-access.htm:9
 msgid "L'accès à cette page est restreint."
 msgstr ""
-

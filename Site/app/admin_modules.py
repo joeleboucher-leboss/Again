@@ -11,4 +11,5 @@ class Admin_menu():
 
 
 prize_related_admin_modules = [Admin_module(_('Catégories'), 'admin/modules/categories.htm'), Admin_module(_('Produits standarts'), 'admin/modules/standarts.htm')]
-admin_menus = [Admin_menu(_('Lots'), prize_related_admin_modules)]
+developer_modules = [Admin_module(_('Schéma relationnel en ligne'), 'admin/modules/database_structure.htm')]
+admin_menus = [Admin_menu(_('Lots'), prize_related_admin_modules), Admin_menu(_('Développeur'), developer_modules)]
