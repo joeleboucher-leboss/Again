@@ -8,7 +8,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'you-will-never-guess' #plus tard sera liée à une variable d'environnement pour plus de sécurité
 
-    VERSION = "1.0.0"
+    VERSION = "0.0.1"
     MAINTENANCE = False
 
 

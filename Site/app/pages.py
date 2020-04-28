@@ -24,14 +24,14 @@ def index():
 
     if app.config['MAINTENANCE'] == True: #Si l'application est en maintenance
         return redirect('/maintenance') #afficher la page MAINTENANCE
-    return render_template('index.htm', title="Again - "+_("Loterie entre particuliers")) #page d'accueil
+    return render_template('index.htm', title="Again - "+_("Loterie entre particuliers"), site_version = app.config['VERSION']) #page d'accueil
 
 @app.route('/maintenance')
 def maintenance():
 
     if app.config['MAINTENANCE'] == False: #si le site n'est pas en maintenance
         return redirect('/') #renvoyer à l'accueil du site
-    return render_template('errors/maintenance.htm', title=_("Cette page est en maintenance.")) #page de maintenance
+    return render_template('errors/maintenance.htm', title=_("Cette page est en maintenance."), site_version = app.config['VERSION']) #page de maintenance
 
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -54,7 +54,7 @@ def login():
             next_page = '/' #on renvoie à l'accueil
         return redirect(next_page) #sinon, on renvoie bien a la page suivante
 
-    return render_template('login.htm', form=form, title="Again - "+_("Connexion")) #page de connexion
+    return render_template('login.htm', form=form, title="Again - "+_("Connexion"), site_version = app.config['VERSION']) #page de connexion
 
 @app.route('/logout')
 def logout():
@@ -78,4 +78,4 @@ def registration():
 
         return redirect('/login') #on renvoie a la page de connexion
     #on affiche le formulaire d'inscription
-    return render_template('register.htm', title=_("S'enregistrer"), form=form)
+    return render_template('register.htm', title=_("S'enregistrer"), site_version = app.config['VERSION'], form=form)

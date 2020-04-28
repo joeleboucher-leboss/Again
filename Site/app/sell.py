@@ -13,8 +13,8 @@ import app.admin_modules as modules
 
 @app.route("/sell")
 def sell():
-    return render_template("sell/sell_article.htm", title=_('Créer une loterie'))
+    return render_template("sell/sell_article.htm", title=_('Créer une loterie'), site_version = app.config['VERSION'])
 
 @app.route("/sell-preview")
 def sell_preview():
-    return render_template("sell/sell_article_preview.htm", title=_('Vérifier votre loterie'))
+    return render_template("sell/sell_article_preview.htm", title=_('Vérifier votre loterie'), site_version = app.config['VERSION'])

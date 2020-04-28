@@ -1,0 +1,25 @@
+{%with version = "0.0.0"%}
+{%if not version == site_version%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+{%endif%}
+{%endwith%}
+<h1 id="organisation-page-html">Organisation page HTML</h1>
+<ul>
+<li>section <em>barre de navigation</em></li>
+<li>section <em>contenu</em></li>
+<li>section <em>pied de page</em></li>
+</ul>
+<h3 id="pages-principales">Pages principales</h3>
+<ul>
+<li><strong>login.htm <em>(connexion)</em></strong><br>arguments: form<br>utilise: navBar.htm, footer.htm</li>
+<li><strong>register.htm <em>(inscription)</em></strong><br>arguments: form<br>utilise: navBar.htm, footer.htm</li>
+<li><strong>index.htm <em>(Liste des lots, page d&#39;accueil)</em></strong><br>arguments: --<br>utilise: navBar.htm, footer.htm</li>
+<li><strong>maintenance.htm <em>(page utilisée pour bloquer le site)</em></strong><br>arguments: --<br>utilise:  navBarStatic.htm, footer.htm  </li>
+</ul>
+<h3 id="templates-r-utilisables">Templates réutilisables</h3>
+<p><em>Cette rubrique entière sera amenée à changer avec l&#39;introduction de Bootstrap</em></p>
+<ul>
+<li><strong>navBarStatic.htm <em>(barre de navigation sans fonctionnalités)</em></strong><br>arguments: --</li>
+<li><strong>navBar.htm <em>(barre de navigation)</em></strong><br>arguments: --</li>
+<li><strong>footer.htm <em>(pied de page)</em></strong><br>arguments: --</li>
+</ul>

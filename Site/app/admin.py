@@ -45,6 +45,7 @@ def admin_dashboard():
         newPrize = Prize(prize_name = newstandartproduct.name.data, is_standart = True, prize_description = newstandartproduct.description.data, prize_category = newstandartproduct.category.data)
         db.session.add(newPrize)
         db.session.commit()
+        return redirect(url_for('admin_dashboard'))
     #return str([field.label for field in newstandartproduct])
     #return render_template('admin/modules/submodules/add_standart.htm', newstandartproductform = newstandartproduct)
-    return render_template('admin/dashboard.htm', title=_('Panneau de bord'), admin_menus = modules.admin_menus, newcategoryform=newcategoryform, categories = categories, newstandartproductform=newstandartproduct, standartproducts = standartproducts)
+    return render_template('admin/dashboard.htm', title=_('Panneau de bord'), admin_menus = modules.admin_menus, newcategoryform=newcategoryform, categories = categories, newstandartproductform=newstandartproduct, standartproducts = standartproducts, site_version = app.config['VERSION'])
