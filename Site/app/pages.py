@@ -1,4 +1,4 @@
-from flask import render_template, redirect, send_from_directory
+from flask import render_template, redirect, send_from_directory, url_for
 from flask import request
 from werkzeug.urls import url_parse
 #from jinja2 import Template #pour déboguer
@@ -10,6 +10,8 @@ from app.config import Config
 from app.forms import LoginForm, RegistrationForm
 import os
 from app.admin import *
+from app.sell import *
+from app.purchase import *
 
 # routage pour l'icône du site
 @app.route('/favicon.ico')
