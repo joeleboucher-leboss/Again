@@ -11,10 +11,10 @@ from app.forms import LoginForm, RegistrationForm, Admin_NewCategoryForm, Admin_
 import os
 import app.admin_modules as modules
 
-@app.route("/sell")
+@app.route("/sell") # Page de vente
 def sell():
     return render_template("sell/sell_article.htm", title=_('Créer une loterie'), site_version = app.config['VERSION'])
 
-@app.route("/sell-preview")
+@app.route("/sell-preview") # Page de prévisualisation de vente
 def sell_preview():
     return render_template("sell/sell_article_preview.htm", title=_('Vérifier votre loterie'), site_version = app.config['VERSION'])

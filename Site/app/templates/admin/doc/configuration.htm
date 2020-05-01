@@ -1,9 +1,9 @@
 {#
-PARAMETRES: -
+PARAMETRES: site_version
 #}
-{%with version = "0.0.0"%}
+{%with version = "0.0.1"%} <!-- renseigner la version de la doc ici -->
 {%if not version == site_version%}
-  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%} <!-- On affiche un avertissement si la doc n'est pas à jour -->
 {%endif%}
 {%endwith%}
 <h1 id="configuration-du-site">Configuration du site</h1>
@@ -14,4 +14,5 @@ PARAMETRES: -
 <li><strong>SECRET_KEY</strong> [string] <em>(clé de sécurité contre les attaques CSRF, intégralement géré par les modules FLASK)</em></li>
 <li><strong>VERSION</strong> [string] <em>(La version actuelle du site en ligne)</em></li>
 <li><strong>MAINTENANCE</strong> [bool] <em>(True ou False, indique si le site est en maintenance ou non)</em></li>
+<li><strong>LANGUAGES</strong> [list(string)] <em>(spécifie les langues disponibles sur le site)</em></li>
 </ul>

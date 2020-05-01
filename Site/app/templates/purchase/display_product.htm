@@ -2,13 +2,20 @@
 PARAMETRES:
 title : nom de la page
 #}
+
 {%extends "elements/base.htm"%}
+
+<!--#region avertissement vitrine -->
 {%block alerts%}
 <div class="alert alert-dark" role="alert">
   {{_("Il s'agit pour l'instant d'une page vitrine.")}}
 </div>
 {%endblock%}
+<!--#endregion -->
+
+<!--#region contenu-->
 {%block content%}
 <!--ici le contenu de la page-->
 <h1>Le contenu de la page</h1>
 {%endblock%}
+<!--#endregion-->

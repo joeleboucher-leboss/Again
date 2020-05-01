@@ -1,19 +1,34 @@
+{#
+PARAMETRES:
+
+categories [toutes les catégories de produits]
+
+#}
+
 <h1>{{_('Page des produits standarts')}}</h1>
 <br/>
+
+{# Information page encore en construction #}
 <div class="alert alert-info" role="alert">
   {{_("Page encore en construction, soyez rassurés. Elle fonctionne, mais elle est encore loin d'être pratique.")}}
 </div>
+
+
 <div class="row">
+
   <div class="col-6">
-    {%include 'admin/modules/submodules/browse_standarts.htm'%}
+    {%include 'admin/modules/submodules/browse_standarts.htm'%} {# sous-module parcourir les produits standarts #}
   </div>
+
   <div class="col-6" style="border-width:1px;border-left-style:solid;">
-    {%include 'admin/modules/submodules/add_standart.htm'%}
+
+    {%include 'admin/modules/submodules/add_standart.htm'%} {# sous-module ajouter un produit standart #}
 
     <!-- arborescence pour selection de la categorie # provisoire -->
+    <input type="radio" id="selectnocat" value=0 name="catselect" onclick="updateCat(0);" /> <label for="selectnocat">Pas de catégorie</label><br />
     {%for category in categories recursive%}
-      {{category.id}} | {{category.name}} <input type="radio" value={{category.id}} name="catselect" onclick="updateCat({{category.id}});" /><br />
-      <div style="padding:10px;">{{loop(category.children)}}</div>
+      <input type="radio" id="select{{category.id}}" value={{category.id}} name="catselect" onclick="updateCat({{category.id}});" /> <label for="select{{category.id}}">{{category.name}}</label><br />
+      <div style="padding-left:20px;">{{loop(category.children)}}</div>
     {%endfor%}
 
   </div>
@@ -22,6 +37,6 @@
 <script type="text/javascript">
 function updateCat(catId)
 {
-document.getElementById("category").value = catId;
+document.getElementById("category").value = catId; // on remplace la valeur du champ "category" du formulaire par la valeur spécifiée
 }
 </script>

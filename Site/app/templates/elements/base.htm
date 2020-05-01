@@ -6,8 +6,10 @@
    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
-<body>
+<body style="padding-top: 70px">
+  <div>
   {% include 'elements/navBar.htm' %} {# INSÉRER LA BARRE DE NAVIGATION #}
+</div>
   {%block alerts%} {%endblock%}
   <div class="row">
     <div class="col-sm-2">

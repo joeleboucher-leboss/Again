@@ -1,12 +1,19 @@
+{#
+PARAMETRES: -
+#}
+
 <h1>{{_('Ajouter une catégorie')}} (<span id="parent_category">{{_('racine')}}</span>)</h1>
+
 <form action="#" method="post" novalidate>
         {{ newcategoryform.hidden_tag() }}
         <p>
             {{ newcategoryform.name.label }}<br>
             {{ newcategoryform.name(size=32) }}<br>
+
             {% for error in newcategoryform.name.errors %}
-            <div class="alert alert-warning alert-dismissible fade" role="alert">{{ error }}</div>
+            <div class="alert alert-warning alert-dismissible fade" role="alert">{{ error }}</div> {# on affiche toutes les erreurs de nom de catégorie #}
             {% endfor %}
+
         </p>
             {{ newcategoryform.parent_id(value=parent_id, id="parent_id") }}
         <p>{{ newcategoryform.newCategorySubmit() }}</p>
