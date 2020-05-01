@@ -1,3 +1,11 @@
+{#
+PARAMETRES:
+
+title [titre de la page]
+site_version [version du site]
+
+#}
+
 <html>
 <head>
    <title>{{title}}</title>
@@ -6,15 +14,20 @@
    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
-<body>
+<body style="padding-top: 70px;">
+  <div>
   {% include 'elements/adminNavBar.htm' %} {# INSÉRER LA BARRE DE NAVIGATION #}
-  <div class="row">
-    <div class="col-2">
-      {%include 'admin/elements/sidebar.htm'%}
+  </div>
+  <div class="row" style="height:100%">
+
+    <div class="col-2 d-none d-md-block bg-light">
+      {%include 'admin/elements/sidebar.htm'%} {# dans la colonne de gauche, on insère la sidebar #}
     </div>
-    <div class="col-10">
-      {%block content%}{%endblock%}
+
+    <div class="col-10" style="padding-bottom:80px">
+      {%block content%}{%endblock%} {# dans la colonne de droite, il y a le contenu #}
     </div>
+
   </div>
   {% include 'elements/footer.htm' %} {# INSÉRER LE PIED DE PAGE #}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

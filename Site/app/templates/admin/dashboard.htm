@@ -1,27 +1,56 @@
+{#
+PARAMETRES:
+
+title [titre de la page]
+admin_menus [liste des menus administrateur]
+site_version [version du site]
+
+#}
+
 {%extends 'admin/elements/admin_base.htm'%}
-{%block content%}
-<div class="tab-content" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{%include 'admin/modules/admin_home.htm'%}</div>
-    {%for menu in admin_menus%}
-    <div class="tab-pane fade" id="v-pills-{{menu.name.replace(' ', '_')}}" role="tabpanel" aria-labelledby="v-pills-{{menu.name.replace(' ', '_')}}-tab">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
+
+{%block content%} <!-- ici le contenu de la page-->
+
+<div class="tab-content" id="v-pills-tabContent"> {# contenu des menus administrateurs #}
+
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"> {# module accueil administrateur #}
+      {%include 'admin/modules/admin_home.htm'%}
+    </div>
+
+    {%for menu in admin_menus%} {# pour chaque menu administrateur (sélectionnable dans le sidebar inclus dans admin_base.htm)... #}
+    <div class="tab-pane fade" id="v-pills-{{menu.name.replace(' ', '_')}}" role="tabpanel" aria-labelledby="v-pills-{{menu.name.replace(' ', '_')}}-tab"> {# on crée un conteneur recevant les différents modules sous formes d'onglets#}
+
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist"> {# conteneur des onglets #}
+
+        <li class="nav-item"> {# on isole le premier onglet (module [0] du menu) pour qu'il soit actif par défaut #}
           <a class="nav-link active" id="{{menu.modules[0].name.replace(' ', '_')}}-tab" data-toggle="tab" href="#{{menu.modules[0].name.replace(' ', '_')}}" role="tab" aria-controls="{{menu.modules[0].name.replace(' ', '_')}}" aria-selected="true">{{menu.modules[0].name}}</a>
         </li>
-        {%for module in menu.modules[1:]%}
-        <li class="nav-item">
+
+        {%for module in menu.modules[1:]%} {# puis pour tous les autres modules du menu... #}
+        <li class="nav-item"> {# on crée un onglet #}
           <a class="nav-link" id="{{module.name.replace(' ', '_')}}-tab" data-toggle="tab" href="#{{module.name.replace(' ', '_')}}" role="tab" aria-controls="{{module.name.replace(' ', '_')}}" aria-selected="true">{{module.name}}</a>
         </li>
         {%endfor%}
+
       </ul>
-      <div class="tab-content" id="myTabContent">
+
+
+      <div class="tab-content" id="myTabContent"> {# conteneur des modules #}
+
+        {# on isole le premier module (module [0] du menu) pour qu'il soit actif par défaut #}
         <div class="tab-pane fade show active" id="{{menu.modules[0].name.replace(' ', '_')}}" role="tabpanel" aria-labelledby="{{menu.modules[0].name.replace(' ', '_')}}-tab">{%include menu.modules[0].template_location%}</div>
-        {%for module in menu.modules[1:]%}
+
+        {%for module in menu.modules[1:]%} {#puis pour tous les autres modules du menu, on crée un conteneur et on affiche le module #}
         <div class="tab-pane fade" id="{{module.name.replace(' ', '_')}}" role="tabpanel" aria-labelledby="{{module.name.replace(' ', '_')}}-tab">{%include module.template_location%}</div>
         {%endfor%}
+
       </div>
+
+
     </div>
     {%endfor%}
+
 </div>
 
 {%endblock%}

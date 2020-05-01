@@ -1,9 +1,9 @@
 {#
-PARAMETRES: -
+PARAMETRES: site_version
 #}
-{%with version = "0.0.1"%}
+{%with version = "0.0.1"%} <!-- renseigner la version de la doc ici -->
 {%if not version == site_version%}
-  {%include "admin/doc/elements/doc_outdated_warning.htm"%}
+  {%include "admin/doc/elements/doc_outdated_warning.htm"%} <!-- On affiche un avertissement si la doc n'est pas à jour -->
 {%endif%}
 {%endwith%}
 <p>On utilise une version personnalisée de bootstrap.css pour offrir une expérience fluide et agréable (et pour gagner en temps de développement)</p>
