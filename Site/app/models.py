@@ -8,6 +8,7 @@ def load_user(id):
     return User.query.get(int(id))
 ##region utilisateur
 class User(UserMixin, db.Model):
+    __tablename__ = 'user' # définit le nom de la table qui sera utilisée
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
@@ -47,4 +48,12 @@ class Prize(db.Model):
     standart_product_id = db.Column (db.Integer, db.ForeignKey('prizes.id'))
     def __repr__(self):
         return '<Prize {}>'.format(self.name)
+##endregion
+
+##region Loterie
+class Lotery(db.Model):
+    __tablename__ = 'loteries' # définit le nom de la table qui sera utilisée
+    id = db.Column(db.Integer, primary_key = True) # clé primaire
+    prize = db.Column(db.Integer, db.ForeignKey('prizes.id')) # Lot à gagner
+    vendor = db.Column(db.Integer, db.ForeinKey('user.id')) # Organisateur
 ##endregion

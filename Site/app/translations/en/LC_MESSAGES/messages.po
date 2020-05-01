@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-12 08:20+0200\n"
-"PO-Revision-Date: 2020-04-12 08:39+0200\n"
+"POT-Creation-Date: 2020-05-01 20:50+0200\n"
+"PO-Revision-Date: 2020-05-01 21:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -19,105 +19,203 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 "X-Generator: Poedit 2.3\n"
 
-#: admin.py:24
+#: admin.py:38 admin.py:71
 msgid "Panneau de bord"
 msgstr "Dashboard"
 
-#: admin_modules.py:13
+#: admin_modules.py:17
 msgid "Catégories"
 msgstr "Categories"
 
-#: admin_modules.py:13
+#: admin_modules.py:18
 msgid "Produits standarts"
 msgstr "Standart products"
 
-#: admin_modules.py:14
+#: admin_modules.py:29
+msgid "Base de données"
+msgstr "Database"
+
+#: admin_modules.py:30
+msgid "Organisation du site"
+msgstr "Website structure"
+
+#: admin_modules.py:31
+msgid "Organisation des pages"
+msgstr "Page structure"
+
+#: admin_modules.py:32
+msgid "CSS"
+msgstr "CSS"
+
+#: admin_modules.py:33
+msgid "Configuration"
+msgstr "Configuration"
+
+#: admin_modules.py:34
+msgid "Authentification"
+msgstr "Login"
+
+#: admin_modules.py:35
+msgid "Traduction"
+msgstr "Translation"
+
+#: admin_modules.py:40
 msgid "Lots"
 msgstr "Prizes"
 
-#: forms.py:8 forms.py:14
+#: admin_modules.py:41
+msgid "Sécurité"
+msgstr "Security"
+
+#: admin_modules.py:42
+msgid "Documentation"
+msgstr "Developer reference"
+
+#: forms.py:9 forms.py:16
 msgid "pseudo"
 msgstr "Username"
 
-#: forms.py:9 forms.py:16
+#: forms.py:10 forms.py:18
 msgid "mot de passe"
 msgstr "Password"
 
-#: forms.py:10
+#: forms.py:11
 msgid "se souvenir de moi"
 msgstr "Remember me"
 
-#: forms.py:11
+#: forms.py:12
 msgid "connexion"
 msgstr "Log in"
 
-#: forms.py:15
+#: forms.py:17
 msgid "e-mail"
 msgstr "e-mail"
 
-#: forms.py:18
+#: forms.py:20
 msgid "confirmer le mot de passe"
 msgstr "Confirm password"
 
-#: forms.py:19 pages.py:79 templates/elements/adminNavBar.htm:31
-#: templates/elements/navBar.htm:31 templates/register.htm:9
+#: forms.py:22 pages.py:81 templates/elements/adminNavBar.htm:31
+#: templates/elements/navBar.htm:34 templates/register.htm:11
 msgid "S'enregistrer"
 msgstr "Register"
 
-#: forms.py:24
+#: forms.py:28
 msgid "Veuillez choisir un autre pseudo"
 msgstr "Please choose another username"
 
-#: forms.py:29
+#: forms.py:34
 msgid "Veuillez utiliser une autre adresse e-mail"
 msgstr "Please choose another e-mail adress"
 
-#: pages.py:25
+#: forms.py:37 forms.py:44
+msgid "nom"
+msgstr "name"
+
+#: forms.py:39 forms.py:46
+msgid "ajouter"
+msgstr "add"
+
+#: forms.py:45
+msgid "Description"
+msgstr "Description"
+
+#: pages.py:27
 msgid "Loterie entre particuliers"
 msgstr "Community Lotery"
 
-#: pages.py:32
+#: pages.py:34
 msgid "Cette page est en maintenance."
 msgstr "This website is under maintenance."
 
-#: pages.py:55 templates/elements/adminNavBar.htm:30
-#: templates/elements/navBar.htm:30 templates/login.htm:11
+#: pages.py:57 templates/elements/adminNavBar.htm:30
+#: templates/elements/navBar.htm:33 templates/login.htm:10
 msgid "Connexion"
 msgstr "Log in"
+
+#: purchase.py:16
+msgid "Article"
+msgstr "Product"
+
+#: purchase.py:20
+msgid "Confirmation"
+msgstr "Confirm"
+
+#: sell.py:16
+msgid "Créer une loterie"
+msgstr "Create lotery"
+
+#: sell.py:20
+msgid "Vérifier votre loterie"
+msgstr "Lotery recap"
 
 #: templates/index.htm:8
 msgid "Page d'accueil de Again"
 msgstr "Again homepage"
 
-#: templates/admin/dashboard.htm:4
-msgid "Accueil administrateur"
-msgstr "Administrator homepage"
+#: templates/admin/doc/database_structure.htm:9
+msgid "Schéma relationnel"
+msgstr "Relational diagram"
 
-#: templates/admin/elements/sidebar.htm:2
+#: templates/admin/doc/database_structure.htm:10
+msgid "Modifier en ligne"
+msgstr "Edit online"
+
+#: templates/admin/doc/elements/doc_outdated_warning.htm:9
+msgid "Attention, cette documentation est dépassée, elle date de la version "
+msgstr "This page is outdated, its version is "
+
+#: templates/admin/elements/sidebar.htm:9
 msgid "Accueil administration"
 msgstr "Administrator homepage"
 
-#: templates/admin/modules/categories.htm:6
+#: templates/admin/modules/CAPTCHA.htm:5
+msgid "Ce site est protégé par reCAPTCHA"
+msgstr "This website is secured with reCAPTCHA"
+
+#: templates/admin/modules/categories.htm:7
 msgid "Page de gestion des catégories"
 msgstr "Manage categories"
 
-#: templates/admin/modules/categories.htm:7
-msgid "Nouvelle catégorie racine"
-msgstr "New root category"
+#: templates/admin/modules/categories.htm:10
+#: templates/admin/modules/standarts.htm:13
+msgid ""
+"Page encore en construction, soyez rassurés. Elle fonctionne, mais elle est "
+"encore loin d'être pratique."
+msgstr ""
+"Don't worry, this page is still under construction. It works, but it is "
+"still a draft."
 
-#: templates/admin/modules/standarts.htm:1
+#: templates/admin/modules/categories.htm:18
+#: templates/admin/modules/submodules/add_category_form.htm:5
+msgid "racine"
+msgstr "root"
+
+#: templates/admin/modules/standarts.htm:8
 msgid "Page des produits standarts"
 msgstr "Manage standart products"
 
-#: templates/elements/adminNavBar.htm:4 templates/elements/navBar.htm:4
+#: templates/admin/modules/submodules/add_category_form.htm:5
+msgid "Ajouter une catégorie"
+msgstr "Add category"
+
+#: templates/admin/modules/submodules/add_standart.htm:1
+msgid "Créer un nouveau produit standart"
+msgstr "Add standart product"
+
+#: templates/admin/modules/submodules/browse_standarts.htm:1
+msgid "Parcourir les produits existants"
+msgstr "Browse standart products"
+
+#: templates/elements/adminNavBar.htm:4 templates/elements/navBar.htm:7
 msgid "Vendre"
 msgstr "Sell"
 
-#: templates/elements/adminNavBar.htm:13 templates/elements/navBar.htm:13
+#: templates/elements/adminNavBar.htm:13 templates/elements/navBar.htm:16
 msgid "admin"
 msgstr "admin"
 
-#: templates/elements/adminNavBar.htm:18 templates/elements/navBar.htm:18
+#: templates/elements/adminNavBar.htm:18 templates/elements/navBar.htm:21
 msgid "Paramètres"
 msgstr "Settings"
 
@@ -125,27 +223,27 @@ msgstr "Settings"
 msgid "Accueil"
 msgstr "Home"
 
-#: templates/elements/adminNavBar.htm:22 templates/elements/navBar.htm:22
+#: templates/elements/adminNavBar.htm:22 templates/elements/navBar.htm:25
 msgid "Déconnexion"
 msgstr "Log out"
 
-#: templates/elements/navBar.htm:20
+#: templates/elements/navBar.htm:23
 msgid "Gestion du site"
 msgstr "Manage website"
 
-#: templates/elements/cards/abonnements.htm:3
+#: templates/elements/cards/abonnements.htm:6
 msgid "Abonnements"
 msgstr "Subscriptions"
 
-#: templates/elements/cards/abonnements.htm:5
+#: templates/elements/cards/abonnements.htm:8
 msgid "Gérez vos abonnements"
 msgstr "Manage subscriptions"
 
-#: templates/elements/cards/achats-en-cours.htm:3
+#: templates/elements/cards/achats-en-cours.htm:6
 msgid "Achats en cours"
 msgstr "Tickets"
 
-#: templates/elements/cards/achats-en-cours.htm:5
+#: templates/elements/cards/achats-en-cours.htm:8
 msgid "Consultez ici vos achats en cours"
 msgstr "View your tickets"
 
@@ -189,11 +287,11 @@ msgstr "Your balance"
 msgid "Pas de ventes en attente"
 msgstr "No pending payout"
 
-#: templates/elements/cards/ventes-en-cours.htm:3
+#: templates/elements/cards/ventes-en-cours.htm:6
 msgid "Ventes en cours"
 msgstr "Sales"
 
-#: templates/elements/cards/ventes-en-cours.htm:5
+#: templates/elements/cards/ventes-en-cours.htm:8
 msgid "Consultez ici vos ventes en cours"
 msgstr "View your ongoing sales"
 
@@ -204,3 +302,13 @@ msgstr "This website is under maintenance."
 #: templates/errors/no-access.htm:9
 msgid "L'accès à cette page est restreint."
 msgstr "Acess to this page is limited"
+
+#: templates/purchase/display_product.htm:11
+#: templates/purchase/purchase_validated.htm:11
+#: templates/sell/sell_article.htm:11
+#: templates/sell/sell_article_preview.htm:11
+msgid "Il s'agit pour l'instant d'une page vitrine."
+msgstr "This page is just a placeholder at the moment."
+
+#~ msgid "Accueil administrateur"
+#~ msgstr "Administrator homepage"
