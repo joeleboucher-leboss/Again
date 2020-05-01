@@ -18,6 +18,12 @@ prize_related_admin_modules = [
     Admin_module(_('Produits standarts'), 'admin/modules/standarts.htm') # Module de gestion des produits standarts
     ]
 
+# modules sécurité
+security_related_admin_modules = [
+
+    Admin_module("CAPTCHA", 'admin/modules/CAPTCHA.htm') # Module de CAPTCHA Analytics
+]
+
 # Modules documentation
 developer_reference = [
     Admin_module(_('Base de données'),'admin/doc/database_structure.htm'), # Documentation base de données
@@ -32,5 +38,6 @@ developer_reference = [
 # Liste des menus administrateur
 admin_menus = [
     Admin_menu(_('Lots'), prize_related_admin_modules), # Menu Lots
+    Admin_menu(_('Sécurité'), security_related_admin_modules), # Menu sécurité
     Admin_menu(_('Documentation'), developer_reference) # Menu Documentation
     ]

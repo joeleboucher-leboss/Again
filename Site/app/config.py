@@ -8,7 +8,12 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'you-will-never-guess' #plus tard sera liée à une variable d'environnement pour plus de sécurité
 
-    VERSION = "0.0.1"
+    RECAPTCHA_USE_SSL = False
+    RECAPTCHA_PUBLIC_KEY = "6Leo2vAUAAAAAHWhJY5Z08lrhUdlq1OKgqh1_Gy_"
+    RECAPTCHA_PRIVATE_KEY = "6Leo2vAUAAAAAOJFw5risJDpTVTBrpIyX9lvqWYy"
+    RECAPTCHA_OPTIONS = {'theme':'white'}
+
+    VERSION = "0.0.2"
     MAINTENANCE = False
 
 
