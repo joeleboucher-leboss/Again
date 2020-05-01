@@ -6,6 +6,8 @@ PARAMETRES:
 {% extends "elements/base.htm" %}
 
 {% block content %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <h1>{{_("S'enregistrer")}}</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
@@ -19,7 +21,7 @@ PARAMETRES:
         </p>
         <p>
             {{ form.email.label }}<br>
-            {{ form.email(size=64) }}<br>
+            {{ form.email(size=32) }}<br>
             {% for error in form.email.errors %}
             <div class="alert alert-warning alert-dismissible fade" role="alert">{{ error }}</div>
             {% endfor %}
@@ -38,6 +40,10 @@ PARAMETRES:
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+        <p>
+            {{ form.recaptcha }}
+        </p>
+        <!--<div class="g-recaptcha" data-sitekey="6Leo2vAUAAAAAHWhJY5Z08lrhUdlq1OKgqh1_Gy_"></div><br/-->
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from flask_babel import lazy_gettext as _
@@ -18,6 +18,7 @@ class RegistrationForm(FlaskForm):
     password = PasswordField(_('mot de passe'), validators=[DataRequired()])
     password2 = PasswordField(
         _('confirmer le mot de passe'), validators=[DataRequired(), EqualTo('password')])
+    recaptcha = RecaptchaField()
     submit = SubmitField(_("S'enregistrer"))
 
     # Méthode de vérification du nom d'utilisateur
