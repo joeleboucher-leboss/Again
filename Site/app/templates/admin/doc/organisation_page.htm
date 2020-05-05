@@ -12,17 +12,22 @@ PARAMETRES: site_version
 <li>section <em>contenu</em></li>
 <li>section <em>pied de page</em></li>
 </ul>
-<h3 id="pages-principales">Pages principales</h3>
+<h2 id="pages-principales">Pages principales</h2>
 <ul>
 <li><strong>login.htm <em>(connexion)</em></strong><br>arguments: form<br>utilise: navBar.htm, footer.htm</li>
 <li><strong>register.htm <em>(inscription)</em></strong><br>arguments: form<br>utilise: navBar.htm, footer.htm</li>
 <li><strong>index.htm <em>(Liste des lots, page d&#39;accueil)</em></strong><br>arguments: --<br>utilise: navBar.htm, footer.htm</li>
 <li><strong>maintenance.htm <em>(page utilisée pour bloquer le site)</em></strong><br>arguments: --<br>utilise:  navBarStatic.htm, footer.htm  </li>
 </ul>
-<h3 id="templates-r-utilisables">Templates réutilisables</h3>
+<h2 id="templates-r-utilisables">Templates réutilisables</h2>
 <p><em>Cette rubrique entière sera amenée à changer avec l&#39;introduction de Bootstrap</em></p>
 <ul>
 <li><strong>navBarStatic.htm <em>(barre de navigation sans fonctionnalités)</em></strong><br>arguments: --</li>
 <li><strong>navBar.htm <em>(barre de navigation)</em></strong><br>arguments: --</li>
 <li><strong>footer.htm <em>(pied de page)</em></strong><br>arguments: --</li>
 </ul>
+<h2 id="structure-pages">Structure des pages</h2>
+
+<!--#region admin_base-->
+{%include 'admin/doc/page_structure/base.htm'%}
+<!--#endregion-->

@@ -37,10 +37,10 @@ class Category(db.Model):
 ##endregion
 
 ##region Association Loterie - participants
-participants = Table('participants', Base.metadata,
-    Column('lotery_id', Integer, ForeignKey('loteries.id')),
-    Column('participant_id', Integer, ForeignKey('user.id'))
-)
+#participants = Table('participants', Base.metadata,
+#    Column('lotery_id', Integer, ForeignKey('loteries.id')),
+#    Column('participant_id', Integer, ForeignKey('user.id'))
+#)
 ##endregion
 
 ##region lot
@@ -58,14 +58,14 @@ class Prize(db.Model):
 ##endregion
 
 ##region Loterie
-class Lotery(db.Model):
-    __tablename__ = 'loteries' # définit le nom de la table qui sera utilisée
-    id = db.Column(db.Integer, primary_key = True) # clé primaire
-    prize = db.Column(db.Integer, db.ForeignKey('prizes.id')) # Lot à gagner
-    vendor = db.Column(db.Integer, db.ForeinKey('user.id')) # Organisateur
-    participants = relationship(
-        'User',
-        secondary = participants,
-        backref = 'loteries'
-    )
+#class Lotery(db.Model):
+#    __tablename__ = 'loteries' # définit le nom de la table qui sera utilisée
+#    id = db.Column(db.Integer, primary_key = True) # clé primaire
+#    prize = db.Column(db.Integer, db.ForeignKey('prizes.id')) # Lot à gagner
+#    vendor = db.Column(db.Integer, db.ForeinKey('user.id')) # Organisateur
+#    participants = relationship(
+#        'User',
+#        secondary = participants,
+#        backref = 'loteries'
+#    )
 ##endregion
