@@ -8,6 +8,7 @@ def load_user(id):
     return User.query.get(int(id))
 ##region utilisateur
 class User(UserMixin, db.Model):
+    # enregistrer les centres d'intérêt à la fois pour les suggestions de produits et pour la pub ciblée
     __tablename__ = 'user' # définit le nom de la table qui sera utilisée
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -37,14 +38,15 @@ class Category(db.Model):
 ##endregion
 
 ##region Association Loterie - participants
-#participants = Table('participants', Base.metadata,
-#    Column('lotery_id', Integer, ForeignKey('loteries.id')),
-#    Column('participant_id', Integer, ForeignKey('user.id'))
-#)
+participants = db.Table('participants', db.metadata,
+    db.Column('lotery_id', db.Integer, db.ForeignKey('loteries.id')),
+    db.Column('participant_id', db.Integer, db.ForeignKey('user.id'))
+)
 ##endregion
 
 ##region lot
 class Prize(db.Model):
+    #correct, bon, comme neuf, neuf...
     __tablename__ = 'prizes' # définit le nom de la table qui sera utilisée
     id = db.Column(db.Integer, primary_key = True) # clé primaire
     prize_name = db.Column(db.String(128)) # Nom du lot
@@ -58,14 +60,24 @@ class Prize(db.Model):
 ##endregion
 
 ##region Loterie
-#class Lotery(db.Model):
-#    __tablename__ = 'loteries' # définit le nom de la table qui sera utilisée
-#    id = db.Column(db.Integer, primary_key = True) # clé primaire
-#    prize = db.Column(db.Integer, db.ForeignKey('prizes.id')) # Lot à gagner
-#    vendor = db.Column(db.Integer, db.ForeinKey('user.id')) # Organisateur
-#    participants = relationship(
-#        'User',
-#        secondary = participants,
-#        backref = 'loteries'
-#    )
+class Lotery(db.Model):
+
+    __tablename__ = 'loteries' # définit le nom de la table qui sera utilisée
+    id = db.Column(db.Integer, primary_key = True) # clé primaire
+    prize = db.Column(db.Integer, db.ForeignKey('prizes.id')) # Lot à gagner
+    vendor = db.Column(db.Integer, db.ForeignKey('user.id')) # Organisateur
+    nb_participants = db.Column(db.Integer) # nombre de participants
+    vendor_price = db.Column(db.Integer) # en centimes
+
+    participants = db.relationship(
+        'User',
+        secondary = participants,
+        backref = 'loteries'
+    )
+
+    def ticket_price(self):
+        return self.vendor_price / self.nb_participants
+
+    def chances(self):
+        return 1/self.nb_participants
 ##endregion
